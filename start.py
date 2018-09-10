@@ -28,6 +28,7 @@ parser.add_argument("--randomseed", type=float, help="allow setting of numpy ran
 parser.add_argument("--foreground", action="store_true", help="force foreground runs even if replication ID is given (which defaults to background runs)")
 parser.add_argument("-p", "--showprogress", action="store_true", help="show timesteps")
 parser.add_argument("-v", "--verbose", action="store_true", help="more detailed output")
+parser.add_argument("--sandtable", type=string, help="run simulation on sandtable platform, must provide a hostname argument")
 args = parser.parse_args()
 
 if args.abce:
@@ -54,7 +55,18 @@ if args.showprogress:
     isleconfig.showprogress = True
 if args.verbose:
     isleconfig.verbose = True
-
+if args.sandtable:
+# we configure hostname and run script the way they like it
+    host = args.sandtable    
+# import their API
+    from sandman2.api import operation, Session
+    import start # this is in app.py ... ?????
+    @operation
+    def agg(*outputs):
+        # do nothing
+        return outputs
+    
+    def rake(hostname):
 # import isle and abce modules
 if isleconfig.use_abce:
     #print("Importing abce")

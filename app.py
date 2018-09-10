@@ -14,12 +14,10 @@ def agg(*outputs):
     # do nothing
    return outputs
 
-
 def rake(hostname):
     replications = 4
     model = start.main
     m = operation(model, include_modules = True)
-    # replications
     riskmodels = [1,2,3,4]
     jobs = []
     general_rc_event_schedule = []
@@ -97,9 +95,9 @@ def rake(hostname):
                     f6.write(str(result[i][6]) + "\n")
                     f7.write(str(result[i][7]) + "\n")
 
-                counter =counter + 1
+                counter += 1
     print(store)
-
+    return None
 
 if __name__ == '__main__':
     host = None
