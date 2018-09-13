@@ -1,0 +1,46 @@
+use boolean value for operational to check if operational
+plot the network
+validation --
+
+list of stylised facts:
+    >60% of categories reinsured + realistic number of reinsurers
+    huge bottleneck with ???
+    insurance is close to maximum capacity, most of the time
+    reinsurers were not defaulting
+  **unbalanced insurers, or unbalanced reinsurers, want both balanced
+    more risk models, lower premium, more contracts underwritten, less bankruptcies
+    what should happen after total collapse of the insurance or reinsurance market?
+    insurance cycle --oscillating premium (currently sawtooth, we want sinusoidal)
+    insurance simulation ends up at lower bound premium sometimes, should never happen
+    more insurers than reinsurers (if paper is correct at least 4x more) but otherwise 8x-10x probably more
+    havent  been using catbonds yet, but we have very good data, 25% of insurance market is insured by catbonds (its in the document)
+    profits/losses timeseries -- potentially something here
+    powerlaw distribution in the timesteps (heavy tailed positive (left skewed)) for both insurance and reinsurance firms
+ESTABLISH AN ORDER FOR THE ABOVE LIST
+    
+end-to-end testing
+    
+    
+    
+    
+    
+AWS:
+    acct
+    potentially remove the jit decorators + numba
+
+stepsize:
+    limited to 1000 atm, potentially up to 1500
+    want larger agent size, 
+
+profile how effective numba is:
+    change steps from 10, 100, 1000, 10000,
+    change number of agents from 10, 100, 1000
+
+calibration:
+    
+visualisation:
+    pie chart for insurers
+    show distribution + median per timestep
+    ensemble statistics + visualisations
+    cumulative of defaults is in github, we want the proportion of cumulative defaults relative to the cumulative of total firms
+
